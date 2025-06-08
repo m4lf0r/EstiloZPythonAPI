@@ -14,7 +14,7 @@ const formTitle = document.getElementById('form-title');
 const subCategoriasMap = {
     'Masculino': ['Camisetas', 'Calças', 'Casacos'],
     'Feminino': ['Camisetas', 'Calças', 'Casacos', 'Vestidos'],
-    'Unissex': ['Acessórios', 'Bonés']
+    'Unissex': ['Casacos', 'Camisetas','Acessórios', 'Bonés']
 };
 
 
@@ -58,8 +58,8 @@ async function fetchProducts() {
                 <td>${product.id}</td>
                 <td>${product.nome}</td>
                 <td>R$ ${product.preco.toFixed(2)}</td>
-                <td>${product.categoria_principal}</td> <!-- MUDANÇA -->
-                <td>${product.sub_categoria}</td>       <!-- MUDANÇA -->
+                <td>${product.categoria_principal}</td> 
+                <td>${product.sub_categoria}</td>       
                 <td class="actions-cell">
 
                     <button class="btn-action btn-edit" onclick='prepareEditForm(${JSON.stringify(product)})' title="Editar Produto">
