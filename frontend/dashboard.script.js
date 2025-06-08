@@ -53,7 +53,7 @@ async function fetchProducts() {
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>
-                    ${product.imagem_url ? `<img src="${product.imagem_url}" alt="${product.nome}" width="50">` : 'Sem Imagem'}
+                    ${product.imagem_url ? `<img src="${API_BASE_URL}/uploads/${product.imagem_url}" alt="${product.nome}" width="50">` : 'Sem Imagem'}
                 </td>
                 <td>${product.id}</td>
                 <td>${product.nome}</td>

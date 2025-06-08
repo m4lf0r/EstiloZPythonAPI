@@ -44,10 +44,10 @@ produto_model = ns_produtos.model('Produto', {
 
 # Banco de dados em memória
 PRODUTOS_DB = {
-    1: {'nome': 'Casaco Moletom Branco e Rosa', 'preco': 129.90, 'categoria_principal': 'Feminino', 'sub_categoria': 'Casacos', 'imagem_url': ''},
-    2: {'nome': 'Camiseta Anti Social Club Branca', 'preco': 79.90, 'categoria_principal': 'Unissex', 'sub_categoria': 'Camisetas', 'imagem_url': ''},
-    3: {'nome': 'Boné Carros em Chamas', 'preco': 59.90, 'categoria_principal': 'Unissex', 'sub_categoria': 'Acessórios', 'imagem_url': ''},
-    4: {'nome': 'Jaqueta Jeans Masculina', 'preco': 199.90, 'categoria_principal': 'Masculino', 'sub_categoria': 'Casacos', 'imagem_url': ''}
+    1: {'nome': 'Casaco Moletom Branco e Rosa', 'preco': 129.90, 'categoria_principal': 'Feminino', 'sub_categoria': 'Casacos', 'imagem_url': 'CasacoMoletomBrancoERosa.png'},
+    2: {'nome': 'Camiseta Anti Social Club Branca', 'preco': 79.90, 'categoria_principal': 'Unissex', 'sub_categoria': 'Camisetas', 'imagem_url': 'CamisetaBrancoERosa.png'},
+    3: {'nome': 'Boné Carros em Chamas', 'preco': 59.90, 'categoria_principal': 'Unissex', 'sub_categoria': 'Acessórios', 'imagem_url': 'BoneCarrosEmChamas.png'},
+    4: {'nome': 'Casaco Moletom Preto', 'preco': 199.90, 'categoria_principal': 'Masculino', 'sub_categoria': 'Casacos', 'imagem_url': 'CasacoMoletomPreto.png'}
 }
 contador_id = 4
 
