@@ -1,5 +1,6 @@
 // URL base da sua API. Se o backend estiver rodando na mesma máquina, será esta.
-const API_BASE_URL = 'http://127.0.0.1:5000';
+//const API_BASE_URL = 'http://127.0.0.1:5000';
+const API_BASE_URL = 'https://estiloz-api.onrender.com';
 
 // Elementos do DOM que vamos manipular
 const productTableBody = document.getElementById('product-table-body');
