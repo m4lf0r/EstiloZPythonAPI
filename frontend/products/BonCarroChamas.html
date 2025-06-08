@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EstiloZ - Moda Urbana</title>
-    <link rel="stylesheet" href="style.css">
+    <title>EstiloZ - BONÉ CARRO EM CHAMAS</title>
+    <!-- O caminho para o CSS precisa ser ajustado (../) porque o arquivo está em uma subpasta -->
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
+    <!-- CABEÇALHO (Igual, mas ajuste os links) -->
     <header>
         <div class="top-bar">
             Frete grátis acima de R$100
         </div>
         <nav class="main-nav">
             <div class="logo">
-                <h1>EstiloZ</h1>
+                <!-- O link para a home agora é ../index.html -->
+                <h1><a href="../index.html">EstiloZ</a></h1>
             </div>
             <ul class="nav-links">
                 <li><a href="#" class="active">Ofertas</a></li>
@@ -26,29 +28,49 @@
             </ul>
             <div class="user-actions">
                 <a href="#">Entrar</a>
-                <a href="/frontend/dashboard.html">Dashboard</a>
                 <a href="#" class="btn-register">Cadastre-se</a>
             </div>
         </nav>
     </header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
+    <!-- CONTEÚDO DA PÁGINA DE DETALHES -->
     <main>
-         <!-- SEÇÃO HERO (BANNER PRINCIPAL) -->
-        <section class="hero-banner-container">
-            <!-- Substitua pela URL ou caminho local da sua imagem do banner -->
-            <img src="../uploads/Banner.png" alt="Banner promocional da EstiloZ">
+        <section class="product-detail-container">
+            <!-- Coluna da Imagem -->
+            <div class="product-image-column">
+                <!-- O caminho para a imagem também precisa ser ajustado (../../) -->
+                <img src="../../uploads/BoneCarrosEmChamas.png" alt="Casaco Moletom Branco e Rosa">
+            </div>
+
+            <!-- Coluna das Informações -->
+            <div class="product-info-column">
+                <h2>BONÉ CARRO EM CHAMAS</h2>
+                <p class="brand">ANTI SOCIAL CLUB</p>
+                <p>Estilo urbano e conforto.</p>
+                
+                <div class="price-section">
+                    <p class="old-price">R$79,90</p>
+                    <p class="current-price">59,90</p>
+                </div>
+
+                <div class="size-section">
+                    <p>TAMANHOS</p>
+                    <div class="size-buttons">
+                        <button class="size-btn">P</button>
+                        <button class="size-btn">M</button>
+                        <button class="size-btn active">G</button>
+                        <button class="size-btn">GG</button>
+                    </div>
+                </div>
+
+                <button class="btn-buy">COMPRAR</button>
+            </div>
         </section>
 
-        <!-- BANNER DE TEXTO PRETO -->
+        <!-- Seção "APROVEITE!" -->
         <section class="promo-banner">
             <h2>APROVEITE!</h2>
             <h1>SEMANA 50% OFF</h1>
-        </section>
-
-        <!-- GRADE DE PRODUTOS -->
-        <section class="product-grid-container">
-            <!-- ... (o resto do seu código) ... -->
         </section>
 
         <!-- GRADE DE PRODUTOS -->
@@ -58,7 +80,7 @@
                 <!-- Produto 1 -->
                 <a href="/frontend/products/MolBrancoRosa.html" class="product-link">
                     <div class="product-card">
-                        <img src="../uploads/CasacoMoletomBrancoERosa.png" alt="Casaco Moletom Branco e Rosa">
+                        <img src="../../uploads/CasacoMoletomBrancoERosa.png" alt="Casaco Moletom Branco e Rosa">
                         <h3>MOLETOM BRANCO E ROSA</h3>
                         <p class="brand">ANTI SOCIAL CLUB</p>
                         <p class="price">R$129,90</p>
@@ -67,7 +89,7 @@
                 <!-- Produto 2 -->
                  <a href="/frontend/products/CamBrancoRosa.html" class="product-link">
                     <div class="product-card">
-                        <img src="../uploads/CamisetaBrancoERosa.png" alt="Camiseta Branca e Rosa">
+                        <img src="../../uploads/CamisetaBrancoERosa.png" alt="Camiseta Branca e Rosa">
                         <h3>CAMISETA BRANCA E ROSA</h3>
                         <p class="brand">ANTI SOCIAL CLUB</p>
                         <p class="price">R$39,90</p>
@@ -76,7 +98,7 @@
                 <!-- Produto 3 -->
                  <a href="/frontend/products/BonCarroChamas.html" class="product-link">
                     <div class="product-card">
-                        <img src="../uploads/BoneCarrosEmChamas.png" alt="Boné Carro em Chamas">
+                        <img src="../../uploads/BoneCarrosEmChamas.png" alt="Boné Carro em Chamas">
                         <h3>BONÉ CARRO EM CHAMAS</h3>
                         <p class="brand">ANTI SOCIAL CLUB</p>
                         <p class="price">R$59,90</p>
@@ -85,7 +107,7 @@
                 <!-- Produto 4 -->
                  <a href="/frontend/products/MolPreto.html" class="product-link">
                     <div class="product-card">
-                        <img src="../uploads/CasacoMoletomPreto.png" alt="Moletom Preto">
+                        <img src="../../uploads/CasacoMoletomPreto.png" alt="Moletom Preto">
                         <h3>MOLETOM PRETO SOCIAL CLUB</h3>
                         <p class="brand">ANTI SOCIAL CLUB</p>
                         <p class="price">R$99,90</p>
@@ -97,6 +119,7 @@
         </section>
     </main>
 
+    
     <!-- RODAPÉ -->
     <footer>
         <p>© 2025 EstiloZ - Estilo que fala por você.</p>

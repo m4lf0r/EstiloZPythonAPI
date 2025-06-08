@@ -29,7 +29,9 @@ class ProductList(Resource):
     @ns_produtos.marshal_list_with(produto_model)
     def get(self):
         """Lista todos os produtos"""
-        return produto_service.get_all_products()
+        resultado_service = produto_service.get_all_products()
+        print(f"CONTROLLER.get retornando: {resultado_service}") # LOG
+        return resultado_service
 
     @ns_produtos.expect(product_parser)
     @ns_produtos.marshal_with(produto_model, code=201)

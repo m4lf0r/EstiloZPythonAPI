@@ -25,7 +25,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background-color: #fff;
+    background-color: #FFF9DF;
     border-bottom: 1px solid #ddd;
 }
 
@@ -71,35 +71,41 @@ a {
 
 
 /* --- SEÇÃO HERO (BANNER) --- */
-.hero {
-    height: 60vh;
-    background-image: url('https://i.imgur.com/w9Cjf2w.png'); /* Imagem de fundo do banner */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.hero-banner {
+    width: 100%; /* Ocupa toda a largura da página */
+    line-height: 0; /* Remove qualquer espaço extra abaixo da imagem */
+}
+
+.hero-banner img {
+    width: 100%; /* Faz a imagem ocupar toda a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Garante que não haja espaços extras */
+}
+
+.promo-banner {
+    background-color: #000;
     color: #fff;
+    text-align: center;
+    padding: 30px 0;
 }
 
-.hero-text {
-    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para legibilidade */
-    padding: 20px 40px;
-    border-radius: 5px;
+.hero-banner-container {
+    background-color: #f0f0f0; /* Cor de fundo cinza bem claro */
+    display: flex;             /* Habilita o Flexbox */
+    justify-content: center;   /* Centraliza o conteúdo (a imagem) horizontalmente */
+    align-items: center;       /* Centraliza o conteúdo verticalmente */
 }
 
-.hero-text h1 {
-    font-size: 48px;
-    margin: 0;
-    text-shadow: 2px 2px 4px #000;
-}
-.hero-text h2 {
-    font-size: 24px;
-    margin: 0;
-    text-shadow: 2px 2px 4px #000;
+/* --- Estilo para a IMAGEM do banner --- */
+.hero-banner-container img {
+    max-width: 80%;    /* A imagem ocupará no máximo 80% da largura do contêiner */
+    height: auto;      /* Mantém a proporção da imagem */
+    display: block;    /* Remove espaços extras */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombra suave opcional */
 }
 
+.promo-banner h1 { font-size: 40px; margin: 0; }
+.promo-banner h2 { font-size: 20px; margin: 0; letter-spacing: 2px; }
 
 /* --- GRADE DE PRODUTOS --- */
 .product-grid-container {
@@ -171,6 +177,119 @@ a {
 .btn-more:hover {
     background-color: #555;
 }
+
+/* style.css */
+
+/* --- Estilos para a Página de Detalhes do Produto --- */
+.product-detail-container {
+    display: flex;
+    gap: 40px;
+    padding: 50px 10%;
+    background-color: #f9f9f9;
+}
+
+.product-image-column {
+    flex: 1; /* Ocupa metade do espaço */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image-column img {
+    max-width: 100%;
+    max-height: 500px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.product-info-column {
+    flex: 1; /* Ocupa a outra metade */
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info-column h2 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.product-info-column .brand {
+    color: #888;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.product-info-column #product-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.price-section .old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 18px;
+    margin: 0;
+}
+
+.price-section .current-price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0 30px 0;
+}
+
+.size-section p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.size-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.size-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.size-btn.active, .size-btn:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+.btn-buy {
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.btn-buy:hover {
+    background-color: #333;
+}
+
+.promo-banner {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.promo-banner h1 { font-size: 40px; margin: 0; }
+.promo-banner h2 { font-size: 20px; margin: 0; }
 
 
 /* --- RODAPÉ --- */

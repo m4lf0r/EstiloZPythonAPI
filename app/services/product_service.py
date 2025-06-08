@@ -5,7 +5,9 @@ from app.models.product_model import produto_dao
 
 class ProdutoService:
     def get_all_products(self):
-        return produto_dao.get_all()
+        produtos = produto_dao.get_all()
+        print(f"SERVICE.get_all_products retornando: {produtos}") # LOG
+        return produtos
 
     def get_product_by_id(self, id):
         return produto_dao.get(id)
@@ -50,6 +52,9 @@ class ProdutoService:
             'sub_categoria': data['sub_categoria'],
             'imagem_url': imagem_url
         }
+        
+        print(f"SERVICE.update_product enviando para o DAO: ID={id}, DADOS={dados_atualizados}") # LOG
+        
         return produto_dao.update(id, dados_atualizados)
 
     def delete_product(self, id):
