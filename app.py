@@ -1,22 +1,20 @@
-# app.py
-
 import os
-from flask import Flask, request, send_from_directory # ADICIONADAS importações
+from flask import Flask, request, send_from_directory
 from flask_restx import Api, Resource, fields
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import FileStorage
 
-# 1. Crie a aplicação Flask
+# Crie a aplicação Flask
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True) # Garante que a pasta uploads exista
 
-# 2. Configure o CORS
+# Configure o CORS
 CORS(app, resources={r"/*": {"origins": "*"}})
 
-# 3. Inicialize a API
+#Inicialize a API
 api = Api(app, 
           version='1.0', 
           title='API da Loja EstiloZ', 
@@ -25,10 +23,9 @@ api = Api(app,
           validate=True
 )
 
-# 4. Defina o namespace
 ns_produtos = api.namespace('products', description='Operações relacionadas a produtos')
 
-# 5. Crie o parser para receber os dados do formulário
+# parser para receber os dados do formulário
 product_parser = ns_produtos.parser()
 product_parser.add_argument('nome', type=str, required=True, help='Nome do produto', location='form')
 product_parser.add_argument('preco', type=float, required=True, help='Preço do produto', location='form')
@@ -36,7 +33,6 @@ product_parser.add_argument('categoria_principal', type=str, required=True, help
 product_parser.add_argument('sub_categoria', type=str, required=True, help='Sub-categoria', location='form')
 product_parser.add_argument('imagem', type=FileStorage, location='files', help='Imagem do produto')
 
-# 6. Defina o modelo de dados (para documentação e GET)
 produto_model = ns_produtos.model('Produto', {
     'id': fields.Integer(readonly=True),
     'nome': fields.String(required=True),
@@ -67,7 +63,6 @@ class ProductList(Resource):
         return [{'id': id, **data} for id, data in PRODUTOS_DB.items()]
 
     @ns_produtos.expect(product_parser)
-    # @ns_produtos.marshal_with(produto_model, code=201) # REMOVA ESTA LINHA
     def post(self):
         """Cria um novo produto com imagem"""
         global contador_id
@@ -107,7 +102,6 @@ class Product(Resource):
 
 
     @ns_produtos.expect(product_parser)
-    # @ns_produtos.marshal_with(produto_model) # REMOVA ESTA LINHA
     def post(self, id):
         """Atualiza um produto existente"""
         if id not in PRODUTOS_DB:
@@ -142,10 +136,6 @@ class Product(Resource):
             return '', 204
         api.abort(404, "Produto não encontrado")
 
-# REMOVA O BLOCO DE 'upload_parser' QUE ESTAVA AQUI
-
-# A linha abaixo não é mais necessária se você já usa @ns_produtos.route
-# api.add_namespace(ns_produtos)
 
 if __name__ == '__main__':
     app.run(debug=True)

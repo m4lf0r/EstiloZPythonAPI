@@ -17,9 +17,7 @@ const subCategoriasMap = {
     'Unissex': ['Acessórios', 'Bonés']
 };
 
-// dashboard.script.js
 
-// ...
 function atualizarSubCategorias() {
     const categoriaSelecionada = categoriaPrincipalInput.value;
     subCategoriaInput.innerHTML = '<option value="" disabled selected>-- Selecione --</option>'; // Limpa e adiciona o placeholder
