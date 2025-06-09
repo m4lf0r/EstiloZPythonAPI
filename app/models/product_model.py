@@ -19,36 +19,19 @@ class ProdutoDAO:
         return None
 
     def create(self, produto_data):
-        """
-        Cria um novo produto. 'produto_data' deve ser um dicionário completo
-        com todos os campos do produto (nome, preco, etc.).
-        """
+        """Recebe um dicionário pronto e o insere no DB."""
         global contador_id
         contador_id += 1
-        
-        # Garante que o ID não está no dicionário que será salvo
-        novo_produto = produto_data.copy()
-        
-        PRODUTOS_DB[contador_id] = novo_produto
-        
-        # Retorna o produto recém-criado, já com o ID correto
-        return {'id': contador_id, **novo_produto}
+        PRODUTOS_DB[contador_id] = produto_data
+        return self.get(contador_id)
 
     def update(self, id, novos_dados):
-        """
-        Atualiza um produto existente. 'novos_dados' é um dicionário
-        com os campos a serem atualizados.
-        """
+        """Atualiza um produto existente com os novos dados."""
         if id in PRODUTOS_DB:
-            # Pega o produto que já existe no "banco"
             produto_existente = PRODUTOS_DB[id]
-            
-            # Atualiza o dicionário existente com os novos dados
             produto_existente.update(novos_dados)
-            
-            # Retorna o produto completo e atualizado
-            return {'id': id, **produto_existente}
-        return None
+            return self.get(id)
+        return Non
 
     def delete(self, id):
         if id in PRODUTOS_DB:
