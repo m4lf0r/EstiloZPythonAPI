@@ -105,6 +105,7 @@ Siga os passos abaixo para rodar a aplicação em seu ambiente local.
 🎉 **Dashboard no ar!** Seu navegador abrirá em um endereço como `http://127.0.0.1:5500/frontend/dashboard.html`.
 
 ### URLs Importantes
+-   **Index:** `http://127.0.0.1:5500/frontend/index.html`
 -   **Dashboard:** `http://127.0.0.1:5500/frontend/dashboard.html`
 -   **Documentação da API (Swagger):** `http://127.0.0.1:5000/swagger`
 
